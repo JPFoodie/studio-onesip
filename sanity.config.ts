@@ -1,18 +1,20 @@
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemaTypes'
+import { defineConfig } from 'sanity'
+import { structureTool } from 'sanity/structure'
+import { visionTool } from '@sanity/vision'
+import { schema } from './schemas'
 
 export default defineConfig({
-  name: 'default',
-  title: 'OneSip Recipes',
-
+  name: 'onesip',
+  title: 'OneSip Studio',
+  
   projectId: '6enao730',
   dataset: 'production',
-
-  plugins: [structureTool(), visionTool()],
-
-  schema: {
-    types: schemaTypes,
-  },
+  apiVersion: '2025-01-01',
+  
+  plugins: [
+    structureTool(),
+    visionTool(),
+  ],
+  
+  schema,
 })
