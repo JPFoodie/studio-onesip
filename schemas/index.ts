@@ -11,6 +11,7 @@ import author from './documents/author'
 import tag from './documents/tag'
 import sake from './documents/sake'
 import recipe from './documents/recipe'
+import blogPost from './documents/blogPost'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -24,6 +25,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     tag,
     sake,
     recipe,
+    blogPost,
   ],
 }
 

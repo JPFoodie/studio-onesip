@@ -27,6 +27,12 @@ export default defineType({
       type: 'text',
     },
     {
+      name: 'intro',
+      title: 'Intro (optional)',
+      type: 'portableBlocks',
+      description: 'Short article-style intro: tips, background, pairing highlights, etc.',
+    },
+    {
       name: 'image',
       title: 'Hero Image',
       type: 'image',
@@ -35,15 +41,28 @@ export default defineType({
       },
     },
     {
+      name: 'heroVideo',
+      title: 'Hero Video',
+      type: 'videoEmbed',
+    },
+    {
+      name: 'ingredients',
+      title: 'Ingredients',
+      type: 'array',
+      of: [{ type: 'string' }],
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'instructions',
+      title: 'Instructions',
+      type: 'portableBlocks',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'gallery',
       title: 'Gallery',
       type: 'array',
       of: [{ type: 'imageWithCaption' }],
-    },
-    {
-      name: 'heroVideo',
-      title: 'Hero Video',
-      type: 'videoEmbed',
     },
     {
       name: 'servings',
@@ -77,19 +96,6 @@ export default defineType({
       name: 'cuisine',
       title: 'Cuisine',
       type: 'string',
-    },
-    {
-      name: 'ingredients',
-      title: 'Ingredients',
-      type: 'array',
-      of: [{ type: 'string' }],
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'instructions',
-      title: 'Instructions',
-      type: 'portableBlocks',
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'pairingSake',
